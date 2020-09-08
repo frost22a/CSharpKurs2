@@ -31,17 +31,21 @@
         {
             get 
             {
-                return Imie + "," + Nazwisko;
+                string IN;
+                if (!string.IsNullOrWhiteSpace(Imie))
+                {
+                    if (!string.IsNullOrWhiteSpace(Nazwisko)) IN = Imie + ", " + Nazwisko;
+                    else IN = Imie;
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(Nazwisko)) IN = Nazwisko;
+                    else IN = "";
+                }
+
+                return IN;
             } 
         }
-
-
-
-
-
-
-
-
     }
 }
-}
+
