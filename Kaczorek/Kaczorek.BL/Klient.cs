@@ -1,7 +1,22 @@
-﻿namespace Kaczorek.BL
+﻿using System.Collections.Generic;
+
+namespace Kaczorek.BL
 {
     public class Klient
     {
+        public Klient() // jak tu zmienimy na private, to nie będzie można użyć tego konstruktora poza klasą
+        {
+    
+        }
+
+        public Klient(int KlinetId)
+        {
+            this.KlientId = KlinetId; // dodajemy ten konstruktor, bo KlinetId jest ustawione jako private i nie mamy do niej dostępu spoza klasy
+        }
+        //WŁAŚCIWOŚCI
+        public static int licznik { get; set; }
+
+
         private string _nazwisko; //prywatne pole nazwisko - dostęp tylko z klasy, a spoza klasy przy pomocy akcesorów, za pomocą włąściwości:
         
         public string Nazwisko // właściwość pola _nazwisko || można wpisać modyfikator dostępu internal - wtedy właściwośc będzie dostępna tylko z wnętrza projektu
@@ -46,6 +61,50 @@
                 return IN;
             } 
         }
+
+        //METODY
+
+        public bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
+        {
+            var poprawne = true;
+            if (string.IsNullOrWhiteSpace(Nazwisko))
+                poprawne = false;
+            if (string.IsNullOrWhiteSpace(Email))
+                poprawne = false;
+
+            return poprawne;
+        }
+
+        /// <summary>
+        /// zapisuje klienta
+        /// </summary>
+        /// <returns></returns>
+        public bool Zapisz() 
+        {
+            // tu powinien być kod który zapisuje klineta
+           return true;
+        }
+
+        /// <summary>
+        /// pobieramy jednego klienta
+        /// </summary>
+        /// <returns></returns>
+        public Klient Pobierz(int klientId) 
+        {
+            // kod, który pobiera określonego klienta
+            return new Klient();
+        }
+
+        /// <summary>
+        /// pobieramy wszystkich klinetów
+        /// </summary>
+        /// <returns></returns>
+        public List<Klient> Pobierz() 
+        {
+            // ko, który pobiera wszystkich klinetów
+            return new List<Klient>();
+        }
+
     }
 }
 
