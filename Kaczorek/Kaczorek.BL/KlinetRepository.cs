@@ -8,7 +8,12 @@ namespace Kaczorek.BL
 {
     public class KlinetRepository
     {
+        private AdresRepository adresRepository { get; set; }
 
+        public KlinetRepository()
+        {
+            adresRepository = new AdresRepository();
+        }
 
         /// <summary>
         /// zapisuje klienta
@@ -29,7 +34,7 @@ namespace Kaczorek.BL
             //tworzymy instancje klasy klienta
 
             Klient klient = new Klient(klientId);
-
+            klient.ListaAdresow = adresRepository.PobierzPoKlinetID(klientId).ToList();
             // kod, który pobiera określonego klienta
 
             //tymczasowo wpisujemy wartości, aby zwrócić klineta

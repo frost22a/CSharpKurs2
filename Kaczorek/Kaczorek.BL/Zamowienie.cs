@@ -18,6 +18,13 @@ namespace Kaczorek.BL
         public int ZamowienieId { get; private set; }
         public DateTimeOffset? DataZamowienia { get; set; }
 
+        public List<PozycjaZamowienia> pozycjaZamowienia {get; set;}
+
+        public int KlientID { get; set; }
+
+        public int AdresDostawyID { get; set; } 
+
+
         /// <summary>
         /// sprawdzam dane produktu
         /// </summary>

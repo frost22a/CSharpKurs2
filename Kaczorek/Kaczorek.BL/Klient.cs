@@ -4,7 +4,9 @@ namespace Kaczorek.BL
 {
     public class Klient
     {
-        public Klient() // jak tu zmienimy na private, to nie będzie można użyć tego konstruktora poza klasą
+        #region konstruktory
+        public Klient() : this(0) // poprzez :this(0) wywołujemy drugi konstruktor z tak zwaną listą inicjalizującą, np. trzeci konstruktor plus this(0, "stefan")
+                                // jak tu zmienimy na private, to nie będzie można użyć tego konstruktora poza klasą
         {
     
         }
@@ -12,7 +14,20 @@ namespace Kaczorek.BL
         public Klient(int KlinetId)
         {
             this.KlientId = KlinetId; // dodajemy ten konstruktor, bo KlinetId jest ustawione jako private i nie mamy do niej dostępu spoza klasy
+            this.ListaAdresow = new List<Adres>();
         }
+        //public Klient(int KlinetId, string imie)
+        //{
+        //    this.KlientId = KlinetId; // dodajemy ten konstruktor, bo KlinetId jest ustawione jako private i nie mamy do niej dostępu spoza klasy
+        //    this.ListaAdresow = new List<Adres>();
+        //    this.Imie = imie;
+        //}
+
+
+
+        #endregion
+
+        #region właciwości
         //WŁAŚCIWOŚCI
         public static int licznik { get; set; }
 
@@ -62,6 +77,15 @@ namespace Kaczorek.BL
             } 
         }
 
+        public List<Adres> ListaAdresow { get; set; }
+
+        public int TypKlienta { get; set; }
+
+        
+
+        #endregion
+
+        #region metody        
         //METODY
 
         public bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
@@ -104,7 +128,7 @@ namespace Kaczorek.BL
             // ko, który pobiera wszystkich klinetów
             return new List<Klient>();
         }
-
+        #endregion 
     }
 }
 

@@ -27,13 +27,55 @@ namespace Kaczorek.BL
         }
 
         /// <summary>
-        /// pobieramy wszystkie zamowienia
+        /// pobieramy jedno zamowienie
         /// </summary>
         /// <returns></returns>
-        public List<Zamowienie> Pobierz()
+
+        public WyswietlanieZamowienia PobierzZamowienieDoWyswietlenia(int zamowienieId) 
         {
-            // ko, który pobiera wszystkich klinetów
-            return new List<Zamowienie>();
+            WyswietlanieZamowienia wyswietlanieZamowienia = new WyswietlanieZamowienia();
+
+            //kod, który pobiera zdefiniowane pola zamówienia
+
+            //tymczasowe dane
+            if (zamowienieId == 10)
+            {
+                wyswietlanieZamowienia.Imie = "Tomek";
+                wyswietlanieZamowienia.Nazwisko = "Nowak";
+                wyswietlanieZamowienia.DataZamowienia = new DateTimeOffset(2020, 10, 09, 12, 45, 50, new TimeSpan(5,0,0));
+                wyswietlanieZamowienia.AdresDostawy = new Adres() { AdresTyp = 2, ULica = "chojnicka", Miasto = "złotów", Kraj = "Poland", KodPocztowy="77-400" };
+                wyswietlanieZamowienia.wyswietleniePozycjiZamowieniaLista = new List<WyswietleniePozycjiZamowienia>();
+
+                //kod, który pobiera elementy zamówienia
+
+                //tymczasowe dane zakodowane na stałe:
+
+                if (zamowienieId == 10)
+                {
+                    var wyswietlaniePozycjiZamowienia = new WyswietleniePozycjiZamowienia()
+                    {
+                        NazwaProduktu = "stół",
+                        CenaZakupu = 300.50M,
+                        Ilosc = 10,
+
+                    };
+                    wyswietlanieZamowienia.wyswietleniePozycjiZamowieniaLista.Add(wyswietlaniePozycjiZamowienia);
+
+
+                    wyswietlaniePozycjiZamowienia = new WyswietleniePozycjiZamowienia()
+                    {
+                        NazwaProduktu = "krzesło",
+                        CenaZakupu = (decimal)33.5,
+                        Ilosc = 12,
+
+                    };
+                    wyswietlanieZamowienia.wyswietleniePozycjiZamowieniaLista.Add(wyswietlaniePozycjiZamowienia);
+
+                }
+               
+            }
+            return wyswietlanieZamowienia;
         }
+        
     }
 }
