@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaczorek.BL.Test", "Kaczore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{79C33F28-BDD6-48DD-A348-668920E1E112}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTest", "CommonTest\CommonTest.csproj", "{482E6EF4-D10E-4E28-899A-12360CB74410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{79C33F28-BDD6-48DD-A348-668920E1E112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79C33F28-BDD6-48DD-A348-668920E1E112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79C33F28-BDD6-48DD-A348-668920E1E112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482E6EF4-D10E-4E28-899A-12360CB74410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482E6EF4-D10E-4E28-899A-12360CB74410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482E6EF4-D10E-4E28-899A-12360CB74410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482E6EF4-D10E-4E28-899A-12360CB74410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91021CF1-2399-42E1-9631-C89E29010409} = {17B8DAE7-114F-4B12-AC76-815E3A6A926A}
+		{482E6EF4-D10E-4E28-899A-12360CB74410} = {17B8DAE7-114F-4B12-AC76-815E3A6A926A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E676AF19-A469-4CFB-AD54-4DBD7DE551A1}

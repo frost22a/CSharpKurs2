@@ -13,10 +13,13 @@ namespace Common
                 {
                     if (char.IsUpper(litera))
                     {
+                        //najpierw przycinamy wszystkie spacje, które są na początku i NA KOŃCU - > tak działą Trim(), a następnie wpisujemy "naszą"
+                        wynik = wynik.Trim();
                         wynik+=" ";
                     }
                     wynik += litera;
                 }
+                wynik = wynik.Trim(); // wycinamy spacje przed i po łańcuchu znaków
             }
             return wynik;
         }
