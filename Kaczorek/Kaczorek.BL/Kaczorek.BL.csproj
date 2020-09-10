@@ -55,5 +55,11 @@
     <Compile Include="Zamowienie.cs" />
     <Compile Include="ZamowienieRepository.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{79c33f28-bdd6-48dd-a348-668920e1e112}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

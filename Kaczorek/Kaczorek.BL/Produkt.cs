@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common;
+
 
 namespace Kaczorek.BL
 {
@@ -22,8 +24,11 @@ namespace Kaczorek.BL
 
         public string NazwaProduktu
         {
-            get { return NazwaProduktu; }
-            set { NazwaProduktu = value; }
+            get 
+            {
+                return ObslugaStringa.WstawSpacje(_NazwaProduktu);
+            }
+            set { _NazwaProduktu = value; }
         }
 
 
