@@ -35,7 +35,12 @@ namespace Kaczorek.BL
             return poprawne;
         }
 
-        
+        //przesłąniamy metodę z klasy bazowej
+
+        public override string ToString()
+        {
+            return NazwaProduktu;
+        }
 
     }
 }

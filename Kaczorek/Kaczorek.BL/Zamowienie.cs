@@ -42,7 +42,11 @@ namespace Kaczorek.BL
         /// zapisuje zamowienie
         /// </summary>
         /// <returns></returns>
-        
+
+        public override string ToString()
+        {
+            return DataZamowienia.Value.Date + " (" + ZamowienieId + ")";
+        }
 
     }
 

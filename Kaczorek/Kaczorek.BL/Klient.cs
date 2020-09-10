@@ -128,6 +128,11 @@ namespace Kaczorek.BL
             // ko, który pobiera wszystkich klinetów
             return new List<Klient>();
         }
+
+        public override string ToString()
+        {
+            return ImieNazwisko;
+        }
         #endregion 
     }
 }
