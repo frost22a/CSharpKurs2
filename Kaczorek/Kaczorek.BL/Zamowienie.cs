@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Zamowienie
+    public class Zamowienie:KlasaBazowa
     {
         public Zamowienie()
         {
@@ -29,7 +29,7 @@ namespace Kaczorek.BL
         /// sprawdzam dane produktu
         /// </summary>
         /// <returns></returns>
-        public bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
+        public override bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
         {
             var poprawne = true;
             if (DataZamowienia == null)

@@ -9,10 +9,24 @@ namespace Kaczorek.BL
     public class ZamowienieRepository
     {
 
-        public bool Zapisz()
+        public bool Zapisz(Zamowienie zamowienie)
         {
-            // tu powinien być kod który zapisuje klineta
-            return true;
+            // tu powinien być kod który zapisuje produkt
+            var sukces = true;
+
+            if (zamowienie.MaZmiany && zamowienie.DanePrawidłowe)
+            {
+                if (zamowienie.JestNowy)
+                {
+                    //wywołać procedurę insert
+                }
+                else
+                {
+                    //wywołać procedurę update
+                }
+            }
+
+            return sukces;
         }
 
         /// <summary>

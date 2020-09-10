@@ -8,17 +8,6 @@ namespace Kaczorek.BL
 {
     public class ProduktRepository
     {
-
-        /// <summary>
-        /// zapisuje produkt
-        /// </summary>
-        /// <returns></returns>
-        public bool Zapisz()
-        {
-            // tu powinien być kod który zapisuje produkt
-            return true;
-        }
-
         /// <summary>
         /// pobieramy jeden produkt
         /// </summary>
@@ -35,8 +24,31 @@ namespace Kaczorek.BL
         /// <returns></returns>
         public List<Produkt> Pobierz()
         {
-            // ko, który pobiera wszystkich klinetów
+            // kod, który pobiera wszystkich klinetów
             return new List<Produkt>();
+        }
+        /// <summary>
+        /// zapisuje produkt
+        /// </summary>
+        /// <returns></returns>
+        public bool Zapisz(Produkt produkt)
+        {
+            // tu powinien być kod który zapisuje produkt
+            var sukces = true;
+
+            if (produkt.MaZmiany  && produkt.DanePrawidłowe)
+            {
+                if (produkt.JestNowy)
+                {
+                    //wywołać procedurę insert
+                }
+                else
+                {
+                    //wywołać procedurę update
+                }
+            }
+
+            return sukces;
         }
     }
 }

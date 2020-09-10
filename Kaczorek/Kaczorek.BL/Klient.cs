@@ -2,7 +2,7 @@
 
 namespace Kaczorek.BL
 {
-    public class Klient
+    public class Klient:KlasaBazowa
     {
         #region konstruktory
         public Klient() : this(0) // poprzez :this(0) wywołujemy drugi konstruktor z tak zwaną listą inicjalizującą, np. trzeci konstruktor plus this(0, "stefan")
@@ -88,7 +88,7 @@ namespace Kaczorek.BL
         #region metody        
         //METODY
 
-        public bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
+        public override bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
         {
             var poprawne = true;
             if (string.IsNullOrWhiteSpace(Nazwisko))
