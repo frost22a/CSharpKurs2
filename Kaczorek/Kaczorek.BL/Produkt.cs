@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Produkt // dodajemy identyfikator dostępu public
+    public class Produkt:KlasaBazowa // dodajemy identyfikator dostępu public
     {
         public Produkt() // dodajmy (musimy go dodać) ten konstruktor, ponieważ chcemy dodać przeciążony konstruktor z identyfikatorem ID
         {
@@ -24,7 +24,7 @@ namespace Kaczorek.BL
         /// sprawdzam dane produktu
         /// </summary>
         /// <returns></returns>
-        public bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
+        public override bool Zwaliduj()  // w "specyfikacji" mamy, że nazwisko oraz emial nie muszą być podane
         {
             var poprawne = true;
             if (string.IsNullOrWhiteSpace(NazwaProduktu))
