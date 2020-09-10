@@ -18,7 +18,14 @@ namespace Kaczorek.BL
         public int ProduktId { get; private set; } //propg tab tab
         public Decimal? AktualnaCena { get; set; } //Decimal? - oznacza że mamy deciaml ale może też być null
         public string Opis { get; set; }
-        public string NazwaProduktu { get; set; }
+        private string _NazwaProduktu;
+
+        public string NazwaProduktu
+        {
+            get { return NazwaProduktu; }
+            set { NazwaProduktu = value; }
+        }
+
 
         /// <summary>
         /// sprawdzam dane produktu
@@ -41,6 +48,8 @@ namespace Kaczorek.BL
         {
             return NazwaProduktu;
         }
+
+        
 
     }
 }
