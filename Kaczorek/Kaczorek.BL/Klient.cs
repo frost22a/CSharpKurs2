@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Common;
+using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Klient:KlasaBazowa
+    public class Klient:KlasaBazowa, ILogowanie
     {
         #region konstruktory
         public Klient() : this(0) // poprzez :this(0) wywołujemy drugi konstruktor z tak zwaną listą inicjalizującą, np. trzeci konstruktor plus this(0, "stefan")
@@ -133,6 +134,13 @@ namespace Kaczorek.BL
         {
             return ImieNazwisko;
         }
+
+        public string Log() 
+        {
+            var log = KlientId + ": " + ImieNazwisko + " " + "Email: " + Email + "Status: " + StanObiektu.ToString();
+            return log;
+        }
+
         #endregion 
     }
 }

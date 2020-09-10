@@ -5,7 +5,7 @@ using Common;
 
 namespace Kaczorek.BL
 {
-    public class Produkt:KlasaBazowa // dodajemy identyfikator dostępu public
+    public class Produkt:KlasaBazowa , ILogowanie // dodajemy identyfikator dostępu public 
     {
         public Produkt() // dodajmy (musimy go dodać) ten konstruktor, ponieważ chcemy dodać przeciążony konstruktor z identyfikatorem ID
         {
@@ -26,7 +26,9 @@ namespace Kaczorek.BL
         {
             get 
             {
-                return ObslugaStringa.WstawSpacje(_NazwaProduktu);
+                //return ObslugaStringa.WstawSpacje(_NazwaProduktu); 
+                // wersja z metodą rozszerzoną (działa w tym wypadku jak String):
+                return _NazwaProduktu.WstawSpacje();
             }
             set { _NazwaProduktu = value; }
         }
@@ -54,7 +56,12 @@ namespace Kaczorek.BL
             return NazwaProduktu;
         }
 
-        
+        public string Log()
+        {
+            var log = ProduktId + ": " + NazwaProduktu + " " + "Opis: " + Opis + "Status: " + StanObiektu.ToString();
+            return log;
+        }
+
 
     }
 }
